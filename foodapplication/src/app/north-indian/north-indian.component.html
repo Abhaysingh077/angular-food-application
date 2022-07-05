@@ -1,0 +1,23 @@
+<div class="north-indian"><h1>North-Indians Foods</h1></div>
+   <div class="item">
+      <div class="container" *ngFor="let data of northFooddata">
+        <img src={{data.image}}/>
+        <div class="content-box">
+          <h4 class="name">{{data.item}}</h4>
+          <h4 class="name">{{data.category}}</h4>
+
+          <div>
+            <h2 class="price">₹{{data.price}}</h2>
+            <a
+              ><button class="delete"
+                mat-raised-button
+                color="warn"
+                 
+                (click)="openDialog(data.item)">
+                Place Order
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>

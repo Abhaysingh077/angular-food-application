@@ -1,0 +1,72 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="profile">
+      <body>
+        <div class="wrapper">
+          <div class="img-area">
+            <div class="inner-area">
+              <img
+                src="https://cdn2.vectorstock.com/i/1000x1000/37/11/man-manager-administrator-consultant-avatar-vector-35753711.jpg"
+                alt="admin"
+              />
+            </div>
+          </div>
+          <div class="name">Vaibhav Jain</div>
+          <div class="career">Admin</div>
+          <hr class="horizon" />
+          <button class="about">About Me</button>
+          <div class="info">
+            <p>Name: Vaibhav Jain</p>
+            <p>Age: 22</p>
+            <p></p>
+            <p></p>
+            <p>Blood: O+</p>
+            <p>Email:vaibhav@gmail.com</p>
+            <p></p>
+          </div>
+          <p class="flow">Add Food</p>
+          <form [formGroup]="addFood" class="addform">
+            <div class="input"> Id:<input type="text" formControlName="id" /> </div>
+           
+            <div class="input">Title:<input type="text" formControlName="item" /> </div>
+           <div class="input"> ImageUrl:<input type="url" formControlName="image" /> </div>
+            <div class="input">Price:<input type="number" formControlName="price" /> </div>
+           <div class="input"> Category:<input type="text" formControlName="category" /> </div>
+            <button mat-raised-button color="warn" type="button" (click)="addMenu()">Submit</button>
+          </form>
+
+          
+        </div>
+      </body>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button class="btn" type="button" mat-button (click)="drawer.toggle()">
+      Menu
+    </button>
+     
+    <div class="item">
+      <div class="container" *ngFor="let data of getfooddata">
+        <img src="{{ data.image }}" />
+        <div class="content-box">
+          <h4 class="name">{{ data.item }}</h4>
+          <h4 class="name">{{ data.category }}</h4>
+
+          <div>
+            <h2 class="price">₹{{ data.price }}</h2>
+            <a
+              ><button class="delete"
+                mat-raised-button
+                color="warn"
+                (click)="deleteFood(data.id)"
+              >
+                Delete
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,15 @@
+<div class="main">      
+         
+
+    <div class="signup" >
+        <form [formGroup]="addcartform" (ngSubmit)="postdatatocart()">
+             
+            <input type="text"  name="name" placeholder="Coustomer Name" required="" formControlName="name">
+            <input type="text" value={{name}} name="item" placeholder="Dish Name" required="" formControlName="item">
+            <input type="number" name="quantity" placeholder="Ouantity" required="" formControlName="quantity">
+            <button [disabled]="!addcartform.valid">Submit</button>
+        </form>
+    </div>
+
+ 
+</div>

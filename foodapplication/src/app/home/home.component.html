@@ -1,0 +1,29 @@
+<div class="web-template"></div>
+<div class="logoname">FriendsFoodCorner</div>
+
+<div class="food-item">
+  <section class="food" *ngFor="let food of foodata">
+    <div class="left-container">
+      <header class="left-header">
+        <figure>
+          <img
+            src="{{food.image}}"
+            alt="product-photo"
+            width="300px"
+            height="200px"
+          />
+        </figure>
+      </header>
+      <section class="main">
+        <span>{{ food.item }}</span>
+        <span>₹{{ food.price }}</span>
+      </section>
+      <button class="addtocart" mat-raised-button color="warn"  (click)="openDialog(food.item)">
+        Place Order
+      </button>
+    </div>
+  </section>
+</div>
+<div class="category">
+  <app-category></app-category>
+</div>

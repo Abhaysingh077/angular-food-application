@@ -1,0 +1,20 @@
+<header class="header-fixed">
+  <div class="header-limiter">
+    <h1 class="logo">
+      <a  routerLink="home">Friends<span>FoodCorner</span></a>
+    </h1>
+
+    <nav>
+      
+
+    
+
+      
+      <a> <button mat-raised-button color="warn"   routerLink="/login" *ngIf="!loginCheck()">Log-In</button></a>
+      <a> <button mat-raised-button color="warn"   routerLink="/admin" *ngIf="loginCheck()">{{userEmail}}</button></a>
+      <a> <button mat-raised-button color="warn"   routerLink="/login" (click)="logout()" *ngIf="loginCheck()">Logout</button></a>
+      <a ><button mat-raised-button color="warn" routerLink="getcart" *ngIf="loginCheck()"><mat-icon aria-hidden="false" aria-label="Example home icon">add_shopping_cart</mat-icon></button></a>
+      <a ><button mat-raised-button color="warn" routerLink="generate_bill" *ngIf="loginCheck()">Bills</button></a>
+    </nav>
+  </div>
+</header>
